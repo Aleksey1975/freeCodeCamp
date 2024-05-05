@@ -1,0 +1,36 @@
+{% extends 'myapp/base.html' %}
+
+{% block title %}{{ title }}{% endblock %}
+
+{% block sign_up %}
+    <h1>Sing Up below</h1>
+<!--          <h2>We are team of talented designers</h2>-->
+<style>
+h5{
+  color:red;
+}    
+</style>
+
+{% for message in messages %}
+<h5>{{ message }}</h5>
+{% endfor %}
+          <form action="" method="POST">
+            {% csrf_token %}
+
+           <p> <label for="username">Username</label>
+            <input type="text" name="username"></p>
+            <p> <label for="email">Email</label>
+            <input type="email" name="email"></p>
+              <p> <label for="password">Password</label>
+            <input type="password" name="password"></p>
+               <p> <label for="password2">Repeat Password</label>
+            <input type="password" name="password2"></p>
+
+            <p class="text-center"><button class="btn-get-started scrollto">Sign Up</button></p>
+
+
+
+          </form>
+
+
+{% endblock %}
